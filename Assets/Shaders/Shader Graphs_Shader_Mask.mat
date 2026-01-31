@@ -29,15 +29,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskOverlay1:
-        m_Texture: {fileID: 2800000, guid: 5f4b475655401b744b829e2ef0803a55, type: 3}
+        m_Texture: {fileID: 2800000, guid: c3baab9b4cc5ae04eb1f52065f3fa53e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskOverlay2:
-        m_Texture: {fileID: 2800000, guid: 1e1302e5ff063c94c8c27b0aa8cbecf8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 27a7c3dc83d598c4c90316e83649f9c2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskOverlay3:
-        m_Texture: {fileID: 2800000, guid: 309d177a1798bf94da5c5c5215dbe7a1, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5f4b475655401b744b829e2ef0803a55, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskOverlay4:
@@ -49,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskOverlay6:
-        m_Texture: {fileID: 2800000, guid: 5f4b475655401b744b829e2ef0803a55, type: 3}
+        m_Texture: {fileID: 10914, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D_Array:
@@ -75,7 +75,7 @@ Material:
     - _QueueOffset: 0
     - _Smoothness: 0
     m_Colors:
-    - _BaseMaskColor: {r: 0.6754716, g: 0.0038233688, b: 0.0038233688, a: 1}
+    - _BaseMaskColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &245296284501511920

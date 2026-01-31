@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d10c88ed01902649821d2d0a41d990d, type: 3}
+  m_Name: SO_MaskData
+  m_EditorClassIdentifier: Assembly-CSharp::SO_MaskData
+  _faceBaseDict:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 21300000, guid: 712bd5ee2cf10574d842d513036418c3, type: 3}
+  _faceAddonDict:
+    _serializedList:
+    - Key: 0
+      Value:
+        _serializedList:
+        - Key: {fileID: 21300000, guid: faada7f0a235d5345adf46a53da2d1d7, type: 3}
+          Value: 1
+        - Key: {fileID: 21300000, guid: b0d6b935fd8771a4fac84c6ec102d5e1, type: 3}
+          Value: 0
+        - Key: {fileID: 21300000, guid: ef2c894131821664d946b1321dfe683d, type: 3}
+          Value: 3
+        - Key: {fileID: 21300000, guid: 20988d0467fe2414d97eae725b371bfa, type: 3}
+          Value: 2
+  _eyesAddonDict:
+    _serializedList:
+    - Key: {fileID: 21300000, guid: 526fe377c483e464ba9a010872fbb8fe, type: 3}
+      Value: 3
+    - Key: {fileID: 21300000, guid: 40e9b63ad932e1140a9d269e0254fd47, type: 3}
+      Value: 1
+    - Key: {fileID: 21300000, guid: ba4edcbade10bda42ae64524cb9543e7, type: 3}
+      Value: 0
+    - Key: {fileID: 21300000, guid: 270f7acb611e9804d995909d2d838481, type: 3}
+      Value: 2
+  _mouthAddonDict:
+    _serializedList:
+    - Key: {fileID: 21300000, guid: e2efd2df91d38af428d3cf300378f21e, type: 3}
+      Value: 0
+    - Key: {fileID: 21300000, guid: 11329a8fc6668384bb6f7a132ccbd2d3, type: 3}
+      Value: 2
+    - Key: {fileID: 21300000, guid: d99d43aae4bcfb541a6cf37267492518, type: 3}
+      Value: 1
+    - Key: {fileID: 21300000, guid: 31888a612e0efb943b91ec61f44232bc, type: 3}
+      Value: 3
+  _accessoryAddonDict:
+    _serializedList:
+    - Key: {fileID: 21300000, guid: ccf07cee95d6d214dac5f606dfcfc41a, type: 3}
+      Value: 0
+    - Key: {fileID: 21300000, guid: 89319cfb0c9d9774fb0b6810149ec092, type: 3}
+      Value: 3
+    - Key: {fileID: 21300000, guid: 068c80e999f988843849e272bbf2db2f, type: 3}
+      Value: 2
+    - Key: {fileID: 21300000, guid: 2bdc4db197875f1499feba49e3226d0a, type: 3}
+      Value: 1
