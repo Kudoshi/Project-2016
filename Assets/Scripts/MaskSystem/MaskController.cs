@@ -13,6 +13,8 @@ public class MaskController : Singleton<MaskController>
     [SerializeField] private SO_MaskData _maskDataSO;
     [SerializeField] private PlayerInput[] _playerInputList;
 
+    private FactoryState _factoryState = FactoryState.IDLE;
+
     //private 
 
     private int _maskCompleted = 0;
@@ -23,8 +25,15 @@ public class MaskController : Singleton<MaskController>
         SpawnMask();
     }
 
+    public void SetFactoryState(FactoryState factoryState)
+    {
+        _factoryState = factoryState;
+    }
+
     private void SpawnMask()
     {
+        //SetFactoryState(FactoryState.MASK_PREPARING);
+
         _currentMask = Instantiate(_maskPf);
         MaskAddon maskAddon = _maskDataSO.GenerateMaskAddon();
         _currentMask.InitializeMaskAddon(maskAddon);
@@ -33,7 +42,7 @@ public class MaskController : Singleton<MaskController>
         _currentMask.transform.position = new Vector3(0, 0, 0);
 
         AssignMaskAddOnForPlayers();
-        // Calls mask controller
+        
     }
 
     private void AssignMaskAddOnForPlayers()
@@ -82,4 +91,9 @@ public class MaskController : Singleton<MaskController>
     {
         _currentMask.ApplyMaskAddon(maskAddon);
     }
+}
+
+public enum FactoryState
+{
+    IDLE, MASK_PREPARING, MASK_READY, MASK_END, END_GAME
 }
