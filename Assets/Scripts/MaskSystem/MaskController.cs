@@ -13,6 +13,13 @@ public class MaskController : Singleton<MaskController>
     [SerializeField] private SO_MaskData _maskDataSO;
     [SerializeField] private PlayerInput[] _playerInputList;
 
+    [Header("Points")]
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform interactionPoint;
+    [SerializeField] private Transform exitPoint;
+    [SerializeField] private float moveDuration = 1f;
+
+
     private FactoryState _factoryState = FactoryState.IDLE;
 
     //private 
@@ -20,9 +27,21 @@ public class MaskController : Singleton<MaskController>
     private int _maskCompleted = 0;
     private Mask _currentMask;
 
-    private void Start()
+    private void OnEnable()
     {
-        SpawnMask();
+        GameManager.OnChangeGameState += OnGameStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnChangeGameState -= OnGameStateChanged;
+
+    }
+    private void OnGameStateChanged(GameState state)
+    {
+        if (state == GameState.GAME)
+            SpawnMask();
+        
     }
 
     public void SetFactoryState(FactoryState factoryState)
@@ -39,12 +58,57 @@ public class MaskController : Singleton<MaskController>
         _currentMask.InitializeMaskAddon(maskAddon);
 
         // Currently just tp to middle
-        _currentMask.transform.position = new Vector3(0, 0, 0);
+        _currentMask.transform.position = spawnPoint.position;
+        var mover = _currentMask.GetComponent<MaskMover>();
+        mover.MoveTo(interactionPoint.position, moveDuration, ()
+            =>
+        {
+            MaskArrived();
+        });
 
         AssignMaskAddOnForPlayers();
-        
     }
 
+   
+
+   
+
+    #region Mask Events
+    private void MaskArrived()
+    {
+        SetFactoryState(FactoryState.MASK_READY);
+    }
+
+    // Do checking for mask here
+    private void MaskSubmit()
+    {
+        if (_currentMask.CheckMaskCorrect())
+        {
+            GameManager.Instance.UpdateMaskSuccess();
+            // We do things that are true here
+        }
+        else
+        {
+            GameManager.Instance.UpdateMaskFail();
+        }
+
+        SpawnMask();
+    }
+
+    private void MaskDoneDeliver()
+    {
+        SetFactoryState(FactoryState.MASK_END);
+
+        var mover = _currentMask.GetComponent<MaskMover>();
+        mover.MoveTo(exitPoint.position, moveDuration, () =>
+        {
+            Destroy(_currentMask.gameObject);
+            MaskSubmit();
+        });
+    }
+
+
+    #endregion
     private void AssignMaskAddOnForPlayers()
     {
         List<int> playerIndexList = new List<int>() { 0, 1, 2, 3};
@@ -62,22 +126,22 @@ public class MaskController : Singleton<MaskController>
             Sprite spriteToAssign;
             if (assigningIndex == 0)
             {
-                spriteToAssign = _currentMask.FullMaskAddon.FaceAddon;
+                spriteToAssign = _currentMask.CurrentMaskAddon.FaceAddon;
                 addonType = MaskAddonType.FACE_ADDON;
             }
             else if (assigningIndex == 1)
             {
-                spriteToAssign = _currentMask.FullMaskAddon.EyesAddon;
+                spriteToAssign = _currentMask.CurrentMaskAddon.EyesAddon;
                 addonType = MaskAddonType.EYES_ADDON;
             }
             else if (assigningIndex == 2)
             {
-                spriteToAssign = _currentMask.FullMaskAddon.MouthAddon;
+                spriteToAssign = _currentMask.CurrentMaskAddon.MouthAddon;
                 addonType = MaskAddonType.MOUTH_ADDON;
             }
             else
             {
-                spriteToAssign = _currentMask.FullMaskAddon.AccessoryAddon;
+                spriteToAssign = _currentMask.CurrentMaskAddon.AccessoryAddon;
                 addonType = MaskAddonType.ACCESSORY_ADDON;
             }
 
@@ -95,5 +159,5 @@ public class MaskController : Singleton<MaskController>
 
 public enum FactoryState
 {
-    IDLE, MASK_PREPARING, MASK_READY, MASK_END, END_GAME
+    IDLE, MASK_PREPARING, MASK_READY, MASK_END
 }

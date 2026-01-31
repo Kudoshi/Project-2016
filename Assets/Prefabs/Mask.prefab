@@ -371,6 +371,7 @@ GameObject:
   - component: {fileID: 2608751842501969549}
   - component: {fileID: 7154960633958010260}
   - component: {fileID: 1268170273564195928}
+  - component: {fileID: 1175351618313171766}
   m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
@@ -430,6 +431,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MaskApplication
   _mask: {fileID: 7154960633958010260}
   _maskDataSO: {fileID: 11400000, guid: b449ddab7213a9246adf21f045c8112b, type: 2}
+--- !u!114 &1175351618313171766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029691366396997824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d671ece5f8f40247b898c8a6c98c20a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskMover
 --- !u!1 &8972619751886569261
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,26 +1,31 @@
 using UI;
 using UnityEngine;
 using TMPro;
+using Kudoshi.Utilities;
+using System;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] private MaskSpawner maskSpawner;
+    public static event Action<GameState> OnChangeGameState;
+
     [SerializeField] private Timer timer;
     [SerializeField] private TMP_Text scoreText;
+
+    private GameState _gameState;
 
     private int _score;
     private bool _isGameActive;
 
+    public GameState GameState { get => _gameState;}
+
     private void OnEnable()
     {
         timer.OnTimerExpired += OnTimerExpired;
-        maskSpawner.OnMaskArrived += OnMaskArrived;
     }
 
     private void OnDisable()
     {
         timer.OnTimerExpired -= OnTimerExpired;
-        maskSpawner.OnMaskArrived -= OnMaskArrived;
     }
 
     private void Start()
@@ -28,27 +33,31 @@ public class GameManager : MonoBehaviour
         _score = 0;
         _isGameActive = true;
         UpdateScoreUI();
-        maskSpawner.SpawnMask();
+
+        ChangeGameState(GameState.GAME);
     }
 
-    public void OnSubmit()
+    public void UpdateMaskSuccess()
     {
-        if (!_isGameActive) return;
-        if (maskSpawner.CurrentMask == null) return;
-
-        // TODO: check correctness against target
         _score++;
         UpdateScoreUI();
+        Debug.Log("[GameManager] Mask submitted success");
 
-        maskSpawner.DespawnMask();
-
-        if (_isGameActive)
-            maskSpawner.SpawnMask();
+        // Trigger whatever animations or stuff u need to do
+        // Do the increase in timer
     }
 
-    private void OnMaskArrived(Mask mask)
+    public void UpdateMaskFail()
     {
-        // mask is ready for player interaction
+        Debug.Log("[GameManager] Mask submitted failed");
+        // trigger animations or smth
+    }
+
+
+    public void ChangeGameState(GameState gameState)
+    {
+        _gameState = gameState;
+        OnChangeGameState?.Invoke(_gameState);
     }
 
     private void OnTimerExpired()
@@ -61,4 +70,9 @@ public class GameManager : MonoBehaviour
         if (scoreText != null)
             scoreText.text = _score.ToString();
     }
+}
+
+public enum GameState
+{
+    IDLE, COUNTDOWN, GAME, ENDGAME
 }

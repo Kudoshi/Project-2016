@@ -9,13 +9,14 @@ public class Mask : MonoBehaviour
     
     private MaskAddon _maskAddon;
 
-    private MaskAddon _currentMaskAddon = new MaskAddon();
+    private MaskAddon _currentMaskAddon;
     private int _addonsAdded;
 
     // Reference component
     private MaskApplication _maskApplication;
 
     public MaskAddon FullMaskAddon { get => _maskAddon; }
+    public MaskAddon CurrentMaskAddon { get => _currentMaskAddon; }
 
     private void Awake()
     {
@@ -33,14 +34,19 @@ public class Mask : MonoBehaviour
 
     public void InitializeMaskAddon(MaskAddon maskAddon)
     {
-        _maskAddon = maskAddon;
+        _currentMaskAddon = maskAddon;
 
         DisplayBaseMask();
     }
 
+    public bool CheckMaskCorrect()
+    {
+        return _maskAddon == _currentMaskAddon;
+    }
+
     private void DisplayBaseMask()
     {
-        _renderers[0].sprite = _maskAddon.FaceBase;
+        _renderers[0].sprite = _currentMaskAddon.FaceBase;
         _addonsAdded++;
     }
 
