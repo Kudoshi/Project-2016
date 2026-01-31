@@ -40,7 +40,7 @@ public class GameManager : Singleton<GameManager>
         UpdateScoreUI();
         gameTimer.StartTimer();
 
-        ChangeGameState(GameState.GAME);
+        ChangeGameState(GameState.COUNTDOWN);
     }
 
     public void OnMaskArrived()
