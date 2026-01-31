@@ -16,6 +16,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private float countdownDuration = 3f;
 
+    [Header("End Game")] [SerializeField] private EndGameUI endGameUI;
+
     [Header("Bonus Time")] [SerializeField]
     private float bonusTimeMax = 5f;
 
@@ -110,6 +112,16 @@ public class GameManager : Singleton<GameManager>
     private void OnGameTimerExpired()
     {
         _isGameActive = false;
+        maskTimer.StopTimer();
+        ShowEndGame();
+    }
+
+    private void ShowEndGame()
+    {
+        ChangeGameState(GameState.ENDGAME);
+
+        if (endGameUI != null)
+            endGameUI.Show(_score);
     }
 
     private void OnMaskTimerExpired()
