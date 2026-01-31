@@ -19,13 +19,14 @@ public class MaskController : Singleton<MaskController>
     [SerializeField] private Transform exitPoint;
     [SerializeField] private float moveDuration = 1f;
 
-
     private FactoryState _factoryState = FactoryState.IDLE;
 
     //private 
 
     private int _addonAdded = 0;
     private Mask _currentMask;
+
+    public FactoryState FactoryState { get => _factoryState; }
 
     private void OnEnable()
     {
@@ -49,7 +50,13 @@ public class MaskController : Singleton<MaskController>
         _factoryState = factoryState;
     }
 
-    private void SpawnMask()
+    public void MaskDiscard()
+    {
+        Destroy(_currentMask.gameObject);
+        _currentMask = null;
+    }
+
+    public void SpawnMask()
     {
         if (GameManager.Instance.GameState != GameState.GAME) return;
 

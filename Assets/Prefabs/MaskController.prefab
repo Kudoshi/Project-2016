@@ -51,3 +51,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  spawnPoint: {fileID: 0}
+  interactionPoint: {fileID: 0}
+  exitPoint: {fileID: 0}
+  moveDuration: 1.5
