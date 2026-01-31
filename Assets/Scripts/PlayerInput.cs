@@ -15,8 +15,11 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetKeyDown(_keyCode) && _canInput)
         {
-            MaskController.Instance.InputApplyAddon(_maskAddon);
-            _canInput = false;
+            bool canApply = MaskController.Instance.InputApplyAddon(_maskAddon);
+            if (canApply)
+            {
+                _canInput = false;
+            }
         }
     }
 

@@ -21,13 +21,13 @@ public class SO_MaskData : ScriptableObject
             {  ColorType.RED, ColorType.YELLOW, ColorType.GREEN, ColorType.BLUE };
 
         // Get colors 
-        ColorType faceColor = (ColorType) UnityEngine.Random.Range(0, colorType.Count);
+        ColorType faceColor = colorType[UnityEngine.Random.Range(0, colorType.Count)];
         colorType.Remove(faceColor);
-        ColorType eyesColor = (ColorType) UnityEngine.Random.Range(0, colorType.Count);
+        ColorType eyesColor = colorType[UnityEngine.Random.Range(0, colorType.Count)];
         colorType.Remove(eyesColor);
-        ColorType mouthColor = (ColorType) UnityEngine.Random.Range(0, colorType.Count);
+        ColorType mouthColor = colorType[UnityEngine.Random.Range(0, colorType.Count)];
         colorType.Remove(mouthColor);
-        ColorType accessoryColor = (ColorType) colorType[0];
+        ColorType accessoryColor = colorType[0];
 
         // Assign sprites
         MaskBaseType baseType = _faceBaseDict.ElementAt(UnityEngine.Random.Range(0, _faceBaseDict.Count)).Key;

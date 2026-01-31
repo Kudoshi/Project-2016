@@ -24,7 +24,7 @@ public class MaskController : Singleton<MaskController>
 
     //private 
 
-    private int _maskCompleted = 0;
+    private int _addonAdded = 0;
     private Mask _currentMask;
 
     private void OnEnable()
@@ -51,11 +51,15 @@ public class MaskController : Singleton<MaskController>
 
     private void SpawnMask()
     {
-        //SetFactoryState(FactoryState.MASK_PREPARING);
+        if (GameManager.Instance.GameState != GameState.GAME) return;
+
+        _addonAdded = 0;
+        SetFactoryState(FactoryState.MASK_PREPARING);
 
         _currentMask = Instantiate(_maskPf);
         MaskAddon maskAddon = _maskDataSO.GenerateMaskAddon();
         _currentMask.InitializeMaskAddon(maskAddon);
+
 
         // Currently just tp to middle
         _currentMask.transform.position = spawnPoint.position;
@@ -126,34 +130,45 @@ public class MaskController : Singleton<MaskController>
             Sprite spriteToAssign;
             if (assigningIndex == 0)
             {
-                spriteToAssign = _currentMask.CurrentMaskAddon.FaceAddon;
+                spriteToAssign = _currentMask.FullMaskAddon.FaceAddon;
                 addonType = MaskAddonType.FACE_ADDON;
             }
             else if (assigningIndex == 1)
             {
-                spriteToAssign = _currentMask.CurrentMaskAddon.EyesAddon;
+                spriteToAssign = _currentMask.FullMaskAddon.EyesAddon;
                 addonType = MaskAddonType.EYES_ADDON;
             }
             else if (assigningIndex == 2)
             {
-                spriteToAssign = _currentMask.CurrentMaskAddon.MouthAddon;
+                spriteToAssign = _currentMask.FullMaskAddon.MouthAddon;
                 addonType = MaskAddonType.MOUTH_ADDON;
             }
             else
             {
-                spriteToAssign = _currentMask.CurrentMaskAddon.AccessoryAddon;
+                spriteToAssign = _currentMask.FullMaskAddon.AccessoryAddon;
                 addonType = MaskAddonType.ACCESSORY_ADDON;
             }
 
             _playerInputList[playerIndex].AssignAddon(addonType, spriteToAssign);
 
             assigningIndex++;
+            
         }
     }
 
-    public void InputApplyAddon(Sprite maskAddon)
+    public bool InputApplyAddon(Sprite maskAddon)
     {
+        if (_factoryState != FactoryState.MASK_READY) return false;
+
         _currentMask.ApplyMaskAddon(maskAddon);
+        _addonAdded++;
+
+        if (_addonAdded >= 4)
+        {
+            MaskDoneDeliver();
+        }
+
+        return true;
     }
 }
 

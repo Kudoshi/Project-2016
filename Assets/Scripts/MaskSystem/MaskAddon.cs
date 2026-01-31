@@ -28,9 +28,21 @@ public class MaskAddon
         if (obj is not MaskAddon other)
             return false;
 
-        return FaceAddon == other.FaceAddon &&
+        return FaceBase == other.FaceBase && 
+               FaceAddon == other.FaceAddon &&
                EyesAddon == other.EyesAddon &&
                MouthAddon == other.MouthAddon &&
                AccessoryAddon == other.AccessoryAddon;
+    }
+
+    public override int GetHashCode()
+    {
+        return System.HashCode.Combine(
+            FaceBase,
+            FaceAddon,
+            EyesAddon,
+            MouthAddon,
+            AccessoryAddon
+        );
     }
 }

@@ -11,6 +11,6 @@ public class PlayerButton : MonoBehaviour
     {
         ColorType colorType = _maskDataSO.GetColorTypeBySprite(type, sprite);
 
-        _colorBtnText.text = colorType.ToString();
+        _colorBtnText.text = colorType.ToString() + " | " + sprite.name.ToString();
     }
 }

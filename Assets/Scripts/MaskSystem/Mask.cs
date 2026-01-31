@@ -7,16 +7,15 @@ public class Mask : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer[] _renderers;
     
-    private MaskAddon _maskAddon;
+    private MaskAddon _fullMaskAddon;
 
     private MaskAddon _currentMaskAddon;
     private int _addonsAdded;
 
     // Reference component
     private MaskApplication _maskApplication;
-
-    public MaskAddon FullMaskAddon { get => _maskAddon; }
     public MaskAddon CurrentMaskAddon { get => _currentMaskAddon; }
+    public MaskAddon FullMaskAddon { get => _fullMaskAddon; }
 
     private void Awake()
     {
@@ -34,19 +33,21 @@ public class Mask : MonoBehaviour
 
     public void InitializeMaskAddon(MaskAddon maskAddon)
     {
-        _currentMaskAddon = maskAddon;
+        _fullMaskAddon = maskAddon;
+        _currentMaskAddon = new MaskAddon();
 
         DisplayBaseMask();
     }
 
     public bool CheckMaskCorrect()
     {
-        return _maskAddon == _currentMaskAddon;
+        return _fullMaskAddon.Equals(_currentMaskAddon);
     }
 
     private void DisplayBaseMask()
     {
-        _renderers[0].sprite = _currentMaskAddon.FaceBase;
+        _currentMaskAddon.FaceBase = _fullMaskAddon.FaceBase;
+        _renderers[0].sprite = _fullMaskAddon.FaceBase;
         _addonsAdded++;
     }
 
