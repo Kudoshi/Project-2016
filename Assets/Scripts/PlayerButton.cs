@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerButton : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _colorBtnText;
+    [SerializeField] private SpriteRenderer _colorBtnText;
     [SerializeField] private SO_MaskData _maskDataSO;
 
     public void UpdateButtonColor(MaskAddonType type, Sprite sprite)
     {
         ColorType colorType = _maskDataSO.GetColorTypeBySprite(type, sprite);
+        Sprite buttonSprite = _maskDataSO.GetButtonSprite(colorType);
 
-        _colorBtnText.text = colorType.ToString() + " | " + sprite.name.ToString();
+        _colorBtnText.sprite = buttonSprite;
     }
 }

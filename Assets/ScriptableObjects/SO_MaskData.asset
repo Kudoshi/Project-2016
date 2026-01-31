@@ -131,3 +131,13 @@ MonoBehaviour:
       Value: 1
     - Key: {fileID: 21300000, guid: 3d90bcdbc9b300d4b88ac11d48ec8bb2, type: 3}
       Value: 1
+  _buttonDict:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 21300000, guid: bb8b8ea82bd178549a91be33faded267, type: 3}
+    - Key: 1
+      Value: {fileID: 21300000, guid: 92c0b45839bdc10469eb9680c3dc3333, type: 3}
+    - Key: 2
+      Value: {fileID: 21300000, guid: 8195d36a412c58b4d9a5ffb12c90e6f6, type: 3}
+    - Key: 3
+      Value: {fileID: 21300000, guid: dce5c1446a3d3f742a47b529bb4eadc8, type: 3}

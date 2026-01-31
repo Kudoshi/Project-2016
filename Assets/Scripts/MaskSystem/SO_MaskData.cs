@@ -13,6 +13,7 @@ public class SO_MaskData : ScriptableObject
     public SerializedDictionary<Sprite, ColorType> _eyesAddonDict;
     public SerializedDictionary<Sprite, ColorType> _mouthAddonDict;
     public SerializedDictionary<Sprite, ColorType> _accessoryAddonDict;
+    public SerializedDictionary<ColorType, Sprite> _buttonDict;
 
     
     public MaskAddon GenerateMaskAddon()
@@ -108,6 +109,11 @@ public class SO_MaskData : ScriptableObject
         maskBaseType = result.MaskBaseType;
         colorType = result.ColorType;
         return true;
+    }
+
+    public Sprite GetButtonSprite(ColorType colorType)
+    {
+        return _buttonDict[colorType];
     }
 }
 

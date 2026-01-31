@@ -51,6 +51,22 @@ public class MaskController : Singleton<MaskController>
         _factoryState = factoryState;
     }
 
+    public bool InputApplyAddon(Sprite maskAddon)
+    {
+        if (_factoryState != FactoryState.MASK_READY) return false;
+
+        _currentMask.ApplyMaskAddon(maskAddon);
+        _addonAdded++;
+
+        if (_addonAdded >= 4)
+        {
+            MaskDoneDeliver();
+        }
+
+        return true;
+    }
+
+
     public void MaskDiscard()
     {
         Destroy(_currentMask.gameObject);
@@ -78,7 +94,8 @@ public class MaskController : Singleton<MaskController>
             MaskArrived();
         });
 
-        AssignMaskAddOnForPlayers();
+        AssignMaskAddonsToPlayers();
+        //RandomizeMaskAddOnButtonForPlayers();
     }
 
    
@@ -122,7 +139,43 @@ public class MaskController : Singleton<MaskController>
 
 
     #endregion
-    private void AssignMaskAddOnForPlayers()
+
+    private void AssignMaskAddonsToPlayers()
+    {
+        ColorType colorTypeFace = _maskDataSO.GetColorTypeBySprite(MaskAddonType.FACE_ADDON, _currentMask.FullMaskAddon.FaceAddon);
+        AssignAddonToPlayer(MaskAddonType.FACE_ADDON, colorTypeFace, _currentMask.FullMaskAddon.FaceAddon);
+
+        ColorType colorTypeEyes = _maskDataSO.GetColorTypeBySprite(MaskAddonType.EYES_ADDON, _currentMask.FullMaskAddon.EyesAddon);
+        AssignAddonToPlayer(MaskAddonType.EYES_ADDON, colorTypeEyes, _currentMask.FullMaskAddon.EyesAddon);
+
+        ColorType colorTypeMouth = _maskDataSO.GetColorTypeBySprite(MaskAddonType.MOUTH_ADDON, _currentMask.FullMaskAddon.MouthAddon);
+        AssignAddonToPlayer(MaskAddonType.MOUTH_ADDON, colorTypeMouth, _currentMask.FullMaskAddon.MouthAddon);
+
+        ColorType colorTypeAccessory = _maskDataSO.GetColorTypeBySprite(MaskAddonType.ACCESSORY_ADDON, _currentMask.FullMaskAddon.AccessoryAddon);
+        AssignAddonToPlayer(MaskAddonType.ACCESSORY_ADDON, colorTypeAccessory, _currentMask.FullMaskAddon.AccessoryAddon);
+    }
+
+    private void AssignAddonToPlayer(MaskAddonType addonType, ColorType colorType, Sprite sprite)
+    {
+        if (colorType == ColorType.RED)
+        {
+            _playerInputList[0].AssignAddon(addonType, sprite);
+        }
+        else if (colorType == ColorType.GREEN)
+        {
+            _playerInputList[1].AssignAddon(addonType,sprite);
+        }
+        else if(colorType == ColorType.BLUE) 
+        {
+            _playerInputList[2].AssignAddon(addonType, sprite);
+        }
+        else
+        {
+            _playerInputList[3].AssignAddon(addonType, sprite);
+        }
+    }
+
+    private void RandomizeMaskAddOnButtonForPlayers()
     {
         List<int> playerIndexList = new List<int>() { 0, 1, 2, 3};
 
@@ -165,20 +218,6 @@ public class MaskController : Singleton<MaskController>
         }
     }
 
-    public bool InputApplyAddon(Sprite maskAddon)
-    {
-        if (_factoryState != FactoryState.MASK_READY) return false;
-
-        _currentMask.ApplyMaskAddon(maskAddon);
-        _addonAdded++;
-
-        if (_addonAdded >= 4)
-        {
-            MaskDoneDeliver();
-        }
-
-        return true;
-    }
 }
 
 public enum FactoryState
