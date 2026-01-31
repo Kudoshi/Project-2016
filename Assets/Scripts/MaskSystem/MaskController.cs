@@ -11,6 +11,7 @@ public class MaskController : Singleton<MaskController>
 {
     [SerializeField] private Mask _maskPf;
     [SerializeField] private SO_MaskData _maskDataSO;
+    [SerializeField] private MaskPreview _maskPreview;
     [SerializeField] private PlayerInput[] _playerInputList;
 
     [Header("Points")]
@@ -42,7 +43,11 @@ public class MaskController : Singleton<MaskController>
     private void OnGameStateChanged(GameState state)
     {
         if (state == GameState.GAME)
+        {
             SpawnMask();
+            
+        }
+           
         
     }
 
@@ -83,7 +88,7 @@ public class MaskController : Singleton<MaskController>
         _currentMask = Instantiate(_maskPf);
         MaskAddon maskAddon = _maskDataSO.GenerateMaskAddon();
         _currentMask.InitializeMaskAddon(maskAddon);
-
+        _maskPreview.Show(_currentMask.FullMaskAddon);
 
         // Currently just tp to middle
         _currentMask.transform.position = spawnPoint.position;
