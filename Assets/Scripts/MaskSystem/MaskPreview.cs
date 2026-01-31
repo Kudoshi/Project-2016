@@ -13,7 +13,7 @@ public class MaskPreview : MonoBehaviour
     {
         faceBaseImage.sprite = maskAddon.FaceBase;
         faceAddonImage.sprite = maskAddon.FaceAddon;
-        eyesAddonImage.sprite = maskAddon.FaceAddon;
+        eyesAddonImage.sprite = maskAddon.EyesAddon;
         mouthAddonImage.sprite = maskAddon.MouthAddon;
         accessoryAddonImage.sprite = maskAddon.AccessoryAddon;
     }
