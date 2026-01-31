@@ -27,6 +27,7 @@ public class MaskController : Singleton<MaskController>
     private Mask _currentMask;
 
     public FactoryState FactoryState { get => _factoryState; }
+    public Mask CurrentMask { get => _currentMask; }
 
     private void OnEnable()
     {
