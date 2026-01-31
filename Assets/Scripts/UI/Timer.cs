@@ -11,15 +11,10 @@ namespace UI
         [SerializeField] private TMP_Text timerText;
         [SerializeField] private Slider timerSlider;
 
-        public event System.Action OnTimerExpired;
+        public event Action OnTimerExpired;
 
         private float _timeRemaining;
         private bool _isActive;
-
-        private void Start()
-        {
-            StartTimer();
-        }
 
         public void StartTimer()
         {
@@ -31,6 +26,11 @@ namespace UI
         {
             _timeRemaining = duration;
             _isActive = true;
+        }
+        
+        public void AddTime(float seconds)
+        {
+            _timeRemaining += seconds;
         }
 
         public void StopTimer()
@@ -50,8 +50,7 @@ namespace UI
                 _isActive = false;
                 OnTimerExpired?.Invoke();
             }
-
-
+            
             if (timerText != null)
             {
                 int minutes = Mathf.FloorToInt(_timeRemaining / 60f);
@@ -63,7 +62,6 @@ namespace UI
             {
                 timerSlider.value = _timeRemaining / totalTime;
             }
-
         }
     }
 }

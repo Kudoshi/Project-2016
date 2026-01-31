@@ -181,6 +181,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 266470022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &216077976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216077978}
+  - component: {fileID: 216077977}
+  m_Layer: 0
+  m_Name: MaskTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &216077977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216077976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540be0c55f66d314385caf3c904acbc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Timer
+  totalTime: 120
+  timerText: {fileID: 0}
+  timerSlider: {fileID: 2129585634}
+--- !u!4 &216077978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216077976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.54291, y: 0.05, z: 6.2107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &256149010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,7 +461,7 @@ GameObject:
   - component: {fileID: 306831976}
   - component: {fileID: 306831975}
   m_Layer: 0
-  m_Name: Timer
+  m_Name: GameTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,7 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.Timer
   totalTime: 120
   timerText: {fileID: 1057924040}
-  timerSlider: {fileID: 2129585634}
+  timerSlider: {fileID: 0}
 --- !u!4 &306831976
 Transform:
   m_ObjectHideFlags: 0
@@ -1179,7 +1226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   maskSpawner: {fileID: 1180448432}
-  timer: {fileID: 306831975}
+  gameTimer: {fileID: 0}
+  maskTimer: {fileID: 0}
   scoreText: {fileID: 1057924040}
 --- !u!4 &918997396
 Transform:
@@ -2657,4 +2705,5 @@ SceneRoots:
   - {fileID: 266470022}
   - {fileID: 918997396}
   - {fileID: 306831976}
+  - {fileID: 216077978}
   - {fileID: 1180448433}
