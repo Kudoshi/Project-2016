@@ -25,20 +25,23 @@ public class GameManager : Singleton<GameManager>
     {
         gameTimer.OnTimerExpired += OnGameTimerExpired;
         maskTimer.OnTimerExpired += OnMaskTimerExpired;
+        OnChangeGameState += OnGameStateChanged;
     }
 
+    
     private void OnDisable()
     {
-        gameTimer.OnTimerExpired += OnGameTimerExpired;
-        maskTimer.OnTimerExpired += OnMaskTimerExpired;
+        gameTimer.OnTimerExpired -= OnGameTimerExpired;
+        maskTimer.OnTimerExpired -= OnMaskTimerExpired;
+        OnChangeGameState -= OnGameStateChanged;
+
     }
-   
+
     private void Start()
     {
         _score = 0;
         _isGameActive = true;
         UpdateScoreUI();
-        gameTimer.StartTimer();
 
         ChangeGameState(GameState.COUNTDOWN);
     }
@@ -70,6 +73,8 @@ public class GameManager : Singleton<GameManager>
     }
 
 
+  
+
     public void ChangeGameState(GameState gameState)
     {
         _gameState = gameState;
@@ -81,6 +86,13 @@ public class GameManager : Singleton<GameManager>
         _isGameActive = false;
     }
 
+    private void OnGameStateChanged(GameState state)
+    {
+        if (state == GameState.GAME)
+        {
+            gameTimer.StartTimer();
+        }
+    }
     private void OnMaskTimerExpired()
     {
         if (!_isGameActive) return;
