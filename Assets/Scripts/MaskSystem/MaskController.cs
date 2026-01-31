@@ -166,7 +166,7 @@ public class MaskController : Singleton<MaskController>
         {
             _playerInputList[0].AssignAddon(addonType, sprite);
         }
-        else if (colorType == ColorType.GREEN)
+        else if (colorType == ColorType.YELLOW)
         {
             _playerInputList[1].AssignAddon(addonType,sprite);
         }
