@@ -15,38 +15,80 @@ MonoBehaviour:
   _faceBaseDict:
     _serializedList:
     - Key: 0
-      Value: {fileID: 21300000, guid: 712bd5ee2cf10574d842d513036418c3, type: 3}
+      Value: {fileID: 21300000, guid: 8213ffab9625cb04e8215dfe5b3df19c, type: 3}
+    - Key: 1
+      Value: {fileID: 21300000, guid: 0fa61ca6de98b8d44b9477de42ba613d, type: 3}
+    - Key: 2
+      Value: {fileID: 21300000, guid: 403e552c5166d6743ae06a177f9f4bd8, type: 3}
   _faceAddonDict:
     _serializedList:
     - Key: 0
       Value:
         _serializedList:
-        - Key: {fileID: 21300000, guid: faada7f0a235d5345adf46a53da2d1d7, type: 3}
-          Value: 1
-        - Key: {fileID: 21300000, guid: b0d6b935fd8771a4fac84c6ec102d5e1, type: 3}
-          Value: 0
-        - Key: {fileID: 21300000, guid: ef2c894131821664d946b1321dfe683d, type: 3}
-          Value: 3
-        - Key: {fileID: 21300000, guid: 20988d0467fe2414d97eae725b371bfa, type: 3}
+        - Key: {fileID: 21300000, guid: 7e157691435d30c4984fd5709e8c7a58, type: 3}
           Value: 2
+        - Key: {fileID: 21300000, guid: 3e962bf37532c60428e2c1a6a189ccc3, type: 3}
+          Value: 0
+        - Key: {fileID: 21300000, guid: 8a06073c1b4b4cd408b44f94cce6716a, type: 3}
+          Value: 1
+        - Key: {fileID: 21300000, guid: fa3fea9bbefbd1f4ea3d7dca75d57519, type: 3}
+          Value: 3
+    - Key: 1
+      Value:
+        _serializedList:
+        - Key: {fileID: 21300000, guid: cd8a36edd5d330f449c9a26386e4ceee, type: 3}
+          Value: 2
+        - Key: {fileID: 21300000, guid: cbde44ce43882de4390ccd51091f909e, type: 3}
+          Value: 0
+        - Key: {fileID: 21300000, guid: 5e987675186b36f4ca3bfda92128084f, type: 3}
+          Value: 1
+        - Key: {fileID: 21300000, guid: b4715aab8557cff4fb467352e9b75ef3, type: 3}
+          Value: 3
+    - Key: 2
+      Value:
+        _serializedList:
+        - Key: {fileID: 21300000, guid: d0f1b85f87ac530479c0aec66817d44c, type: 3}
+          Value: 2
+        - Key: {fileID: 21300000, guid: 1c51ee9d7bc567043a09f95730576251, type: 3}
+          Value: 0
+        - Key: {fileID: 21300000, guid: d35564a821ce49b4b81f8b82228a6218, type: 3}
+          Value: 1
+        - Key: {fileID: 21300000, guid: c10e9791cd40b1c45a5c823de7818ed8, type: 3}
+          Value: 3
   _eyesAddonDict:
     _serializedList:
-    - Key: {fileID: 21300000, guid: 526fe377c483e464ba9a010872fbb8fe, type: 3}
-      Value: 3
-    - Key: {fileID: 21300000, guid: 40e9b63ad932e1140a9d269e0254fd47, type: 3}
-      Value: 1
-    - Key: {fileID: 21300000, guid: ba4edcbade10bda42ae64524cb9543e7, type: 3}
-      Value: 0
-    - Key: {fileID: 21300000, guid: 270f7acb611e9804d995909d2d838481, type: 3}
+    - Key: {fileID: 21300000, guid: c0a4c6ebdfa8006479dac32eb6bb060f, type: 3}
       Value: 2
+    - Key: {fileID: 21300000, guid: 9efa25fbb393a5f49ae9c1ce5f60a185, type: 3}
+      Value: 2
+    - Key: {fileID: 21300000, guid: 449a741cf0457de4dad0d2c7e6212c4a, type: 3}
+      Value: 2
+    - Key: {fileID: 21300000, guid: 80b09e04877f83e4d90af252b712c329, type: 3}
+      Value: 3
+    - Key: {fileID: 21300000, guid: 2c668dc71ee27c644bef11cd5e8c0b80, type: 3}
+      Value: 3
+    - Key: {fileID: 21300000, guid: b8641a067b643054a9df400e73b2cd0b, type: 3}
+      Value: 3
+    - Key: {fileID: 21300000, guid: a67f5aa62355cf243b01a10856e8fa41, type: 3}
+      Value: 0
+    - Key: {fileID: 21300000, guid: f0388acedf8b293499d37dfd7d632730, type: 3}
+      Value: 0
+    - Key: {fileID: 21300000, guid: e93625f39a5a2e94a821af9d606c87a5, type: 3}
+      Value: 0
+    - Key: {fileID: 21300000, guid: 4859d2c7d92584740a8eb5ff88045a08, type: 3}
+      Value: 1
+    - Key: {fileID: 21300000, guid: 616656d2a63a69a45bcf866b2f7bffe9, type: 3}
+      Value: 1
+    - Key: {fileID: 21300000, guid: e5438e6fd335b894d9ac7ea438be3dad, type: 3}
+      Value: 1
   _mouthAddonDict:
     _serializedList:
-    - Key: {fileID: 21300000, guid: e2efd2df91d38af428d3cf300378f21e, type: 3}
+    - Key: {fileID: 21300000, guid: 057df5fdfe4093b46a0d4003c1413b2a, type: 3}
       Value: 0
     - Key: {fileID: 21300000, guid: 11329a8fc6668384bb6f7a132ccbd2d3, type: 3}
-      Value: 2
+      Value: 0
     - Key: {fileID: 21300000, guid: d99d43aae4bcfb541a6cf37267492518, type: 3}
-      Value: 1
+      Value: 0
     - Key: {fileID: 21300000, guid: 31888a612e0efb943b91ec61f44232bc, type: 3}
       Value: 3
   _accessoryAddonDict:
