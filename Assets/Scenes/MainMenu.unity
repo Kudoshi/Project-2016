@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &358210294
 RectTransform:
   m_ObjectHideFlags: 0
@@ -863,6 +863,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 1599984495}
   modeSelectionPanel: {fileID: 940008085}
   creditsPanel: {fileID: 358210293}
+  gameSceneName: BlockoutV3
 --- !u!1 &632515450
 GameObject:
   m_ObjectHideFlags: 0

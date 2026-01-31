@@ -28,7 +28,10 @@ namespace UI
 
         public void OnStartButton()
         {
-            ShowPanel(modeSelectionPanel);
+            if (!string.IsNullOrEmpty(gameSceneName))
+                SceneManager.LoadScene(gameSceneName);
+            else
+                Debug.LogWarning("[MenuManager] Game scene name is not set.");
         }
 
         public void OnCreditsButton()
