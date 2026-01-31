@@ -55,7 +55,7 @@ public class GameManager : Singleton<GameManager>
 
         // Trigger whatever animations or stuff u need to do
         // Do the increase in timer
-        float bonus = bonusTimeMax * Mathf.Exp(-decayRate * _score);
+        float bonus = bonusTimeMin + (bonusTimeMax - bonusTimeMin) * Mathf.Exp(-decayRate * _score);
         
         gameTimer.AddTime(bonus);
         maskTimer.StopTimer();

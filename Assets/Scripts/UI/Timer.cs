@@ -10,6 +10,10 @@ namespace UI
         [SerializeField] private float totalTime;
         [SerializeField] private TMP_Text timerText;
         [SerializeField] private Slider timerSlider;
+        [SerializeField] private Image sliderFillImage;
+        [SerializeField] private AnimationCurve sliderCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
+        [SerializeField] private Color timerFullColor = Color.green;
+        [SerializeField] private Color timerEmptyColor = Color.red;
 
         public event Action OnTimerExpired;
 
@@ -60,7 +64,13 @@ namespace UI
 
             if (timerSlider != null)
             {
-                timerSlider.value = _timeRemaining / totalTime;
+                float t = Mathf.Clamp01(_timeRemaining / totalTime);
+                timerSlider.value = sliderCurve.Evaluate(t);
+
+                if (sliderFillImage != null)
+                {
+                    sliderFillImage.color = Color.Lerp(timerEmptyColor, timerFullColor, t);
+                }
             }
         }
     }
