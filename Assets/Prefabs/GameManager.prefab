@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540be0c55f66d314385caf3c904acbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.Timer
-  totalTime: 120
+  totalTime: 6
   timerText: {fileID: 0}
   timerSlider: {fileID: 1097932291753194092}
 --- !u!1 &5125328480854089726

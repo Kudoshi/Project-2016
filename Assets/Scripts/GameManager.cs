@@ -58,10 +58,13 @@ public class GameManager : Singleton<GameManager>
         float bonus = bonusTimeMax * Mathf.Exp(-decayRate * _score);
         
         gameTimer.AddTime(bonus);
+        maskTimer.StopTimer();
+
     }
 
     public void UpdateMaskFail()
     {
+        maskTimer.StopTimer();
         Debug.Log("[GameManager] Mask submitted failed");
         // trigger animations or smth
     }
