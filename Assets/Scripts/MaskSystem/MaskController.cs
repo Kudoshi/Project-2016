@@ -88,6 +88,7 @@ public class MaskController : Singleton<MaskController>
     private void MaskArrived()
     {
         SetFactoryState(FactoryState.MASK_READY);
+        GameManager.Instance.OnMaskArrived();
     }
 
     // Do checking for mask here

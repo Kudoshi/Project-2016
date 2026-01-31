@@ -8,12 +8,9 @@ public class GameManager : Singleton<GameManager>
 {
     public static event Action<GameState> OnChangeGameState;
 
-    [SerializeField] private Timer timer;
     [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private MaskSpawner maskSpawner;
     [SerializeField] private Timer gameTimer;
     [SerializeField] private Timer maskTimer;
-    [SerializeField] private TMP_Text scoreText;
 
     [SerializeField] private float bonusTimeMax = 5f;
     [SerializeField] private float bonusTimeMin = 0.5f;
@@ -26,12 +23,14 @@ public class GameManager : Singleton<GameManager>
 
     private void OnEnable()
     {
-        timer.OnTimerExpired += OnTimerExpired;
+        gameTimer.OnTimerExpired += OnGameTimerExpired;
+        maskTimer.OnTimerExpired += OnMaskTimerExpired;
     }
 
     private void OnDisable()
     {
-        timer.OnTimerExpired -= OnTimerExpired;
+        gameTimer.OnTimerExpired += OnGameTimerExpired;
+        maskTimer.OnTimerExpired += OnMaskTimerExpired;
     }
    
     private void Start()
@@ -39,10 +38,15 @@ public class GameManager : Singleton<GameManager>
         _score = 0;
         _isGameActive = true;
         UpdateScoreUI();
+        gameTimer.StartTimer();
 
         ChangeGameState(GameState.GAME);
     }
 
+    public void OnMaskArrived()
+    {
+        maskTimer.StartTimer();
+    }
     public void UpdateMaskSuccess()
     {
         _score++;
@@ -77,11 +81,10 @@ public class GameManager : Singleton<GameManager>
     private void OnMaskTimerExpired()
     {
         if (!_isGameActive) return;
-        if (maskSpawner.CurrentMask == null) return;
 
-        maskSpawner.DespawnMask();
-        if (_isGameActive)
-            maskSpawner.SpawnMask();
+        if (_gameState != GameState.GAME) return;
+
+        HydraulicPressDiscard.Instance.Discard();
     }
 
     private void UpdateScoreUI()

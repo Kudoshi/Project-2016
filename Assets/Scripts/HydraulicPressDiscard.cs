@@ -18,7 +18,7 @@ public class HydraulicPressDiscard : Singleton<HydraulicPressDiscard>
         _originalHammerPosition = _hammer.position;
     }
 
-    private void Discard()
+    public void Discard()
     {
         _active = false;
 
