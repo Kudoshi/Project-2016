@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+    public static event Action<GameState> OnChangeGameState;
+
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private Timer gameTimer;
     [SerializeField] private Timer maskTimer;
@@ -28,15 +30,6 @@ public class GameManager : Singleton<GameManager>
     private int _score;
     public GameState GameState { get; private set; }
 
-    private void Start()
-    {
-        _score = 0;
-        _isGameActive = false;
-        UpdateScoreUI();
-
-        ChangeGameState(GameState.COUNTDOWN);
-        StartCoroutine(CountdownRoutine());
-    }
 
     private void OnEnable()
     {
