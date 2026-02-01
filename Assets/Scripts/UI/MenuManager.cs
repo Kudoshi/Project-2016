@@ -18,11 +18,11 @@ namespace UI
 
         private void ShowPanel(GameObject panel)
         {
-            mainMenuPanel.SetActive(false);
-            modeSelectionPanel.SetActive(false);
-            creditsPanel.SetActive(false);
+            if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
+            if (modeSelectionPanel != null) modeSelectionPanel.SetActive(false);
+            if (creditsPanel != null) creditsPanel.SetActive(false);
 
-            panel.SetActive(true);
+            if (panel != null) panel.SetActive(true);
         }
 
         public void OnStartButton()

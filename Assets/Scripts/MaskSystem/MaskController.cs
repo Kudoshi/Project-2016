@@ -67,6 +67,7 @@ public class MaskController : Singleton<MaskController>
         if (_addonAdded >= 4)
         {
             MaskDoneDeliver();
+            GameManager.Instance.PauseMaskTimer();
         }
 
         return true;
