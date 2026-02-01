@@ -417,6 +417,7 @@ MonoBehaviour:
   - {fileID: 4819084927599749139}
   - {fileID: 1395220156847810465}
   - {fileID: 541993109986435162}
+  _popInAddonDuration: 0.15
 --- !u!114 &1268170273564195928
 MonoBehaviour:
   m_ObjectHideFlags: 0

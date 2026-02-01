@@ -26,13 +26,23 @@ public class CameraController : Singleton<CameraController>
     [ContextMenu("Trigger success camera")]
     public void TriggerSuccessCamera()
     {
-        _camera.transform.DOMoveZ(_camera.transform.position.z + _distancePullbackSuccess, _durationInPullbackSuccess)
-            .OnComplete(() =>
-            {
-                _camera.transform.DOMoveZ(_originalZAxis, _durationOutPullbackSuccess);
-            });
-
+        _camera.transform.DOKill();
         Shaker.ShakeAll(_successShake);
+        Sequence seq = DOTween.Sequence();
+
+        seq.Append(
+            _camera.transform.DOMoveZ(
+                _camera.transform.position.z + _distancePullbackSuccess,
+                _durationInPullbackSuccess)
+        );
+        
+
+        seq.Append(
+            _camera.transform.DOMoveZ(
+                _originalZAxis,
+                _durationOutPullbackSuccess)
+        );
+
     }
 
     [ContextMenu("Trigger Fail Camera")]
