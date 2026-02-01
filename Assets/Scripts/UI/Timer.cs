@@ -43,6 +43,16 @@ namespace UI
             _timeRemaining += seconds;
         }
 
+        public void PauseTimer()
+        {
+            _isActive = false;
+        }
+
+        public void ResumeTimer()
+        {
+            _isActive = true;
+        }
+
         public void StopTimer()
         {
             _isActive = false;

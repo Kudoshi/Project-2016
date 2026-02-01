@@ -75,6 +75,7 @@ public class MaskController : Singleton<MaskController>
 
     public void MaskDiscard()
     {
+        GameManager.Instance.PauseMaskTimer();
         Destroy(_currentMask.gameObject);
         _currentMask = null;
     }
@@ -113,6 +114,7 @@ public class MaskController : Singleton<MaskController>
     {
         SetFactoryState(FactoryState.MASK_READY);
         ConveyorBelt.Instance.StopConveyorBelt();
+        GameManager.Instance.ResumeMaskTimer();
         GameManager.Instance.OnMaskArrived();
     }
 
