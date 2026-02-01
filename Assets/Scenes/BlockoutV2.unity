@@ -462,6 +462,7 @@ Transform:
   m_Children:
   - {fileID: 1502614204}
   - {fileID: 1787418678}
+  - {fileID: 640799368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &288028356
@@ -476,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f36e2d73aa28f459698a0c3aa642ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HydraulicPressDiscard
-  _hammer: {fileID: 1787418678}
+  _hammer: {fileID: 640799368}
   _hammerDownPosition: {fileID: 1502614204}
   _hammerHitTime: 0.15
   _hammerRetractTime: 0.5
@@ -1155,6 +1156,80 @@ MonoBehaviour:
   _buttonPressHeight: -0.3
   _buttonPressInDuration: 0.25
   _buttonPressOutDuration: 1
+--- !u!1001 &640799367
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 288028355}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3863053
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3863053
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.000983
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.17729
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6830137
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.68301183
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.18301238
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.18301293
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+      propertyPath: m_Name
+      value: HydraulicPress_Cardboard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+--- !u!4 &640799368 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cad78ef38b6211b4baa96b702920c83b, type: 3}
+  m_PrefabInstance: {fileID: 640799367}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &820537974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +2023,7 @@ Transform:
   m_GameObject: {fileID: 1502614203}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0, y: 2.74, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2034,7 +2109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1787418678
 Transform:
   m_ObjectHideFlags: 0
