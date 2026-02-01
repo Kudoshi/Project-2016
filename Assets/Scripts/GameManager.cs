@@ -82,6 +82,16 @@ public class GameManager : Singleton<GameManager>
         // trigger animations or smth
     }
 
+    public void PauseMaskTimer()
+    {
+        maskTimer.PauseTimer();
+    }
+
+    public void ResumeMaskTimer()
+    {
+        maskTimer.ResumeTimer();
+    }
+
     public void ChangeGameState(GameState gameState)
     {
         GameState = gameState;
