@@ -121,7 +121,7 @@ public class GameManager : Singleton<GameManager>
         ChangeGameState(GameState.ENDGAME);
 
         if (endGameUI != null)
-            endGameUI.Show(_score);
+            endGameUI.Show(_score, gameTimer.ElapsedTime);
     }
 
     private void OnMaskTimerExpired()
