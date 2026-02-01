@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
         _isGameActive = true;
         UpdateScoreUI();
 
-        ChangeGameState(GameState.COUNTDOWN);
+        ChangeGameState(GameState.INSTRUCTION);
     }
 
     public void OnMaskArrived()
@@ -111,5 +111,5 @@ public class GameManager : Singleton<GameManager>
 
 public enum GameState
 {
-    IDLE, COUNTDOWN, GAME, ENDGAME
+    IDLE, COUNTDOWN, GAME, ENDGAME, INSTRUCTION
 }
