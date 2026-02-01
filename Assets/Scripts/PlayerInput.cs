@@ -16,6 +16,7 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyDown(_keyCode) && _canInput)
         {
             bool canApply = MaskController.Instance.InputApplyAddon(_maskAddon);
+            SoundManager.Instance.PlaySound("sfx_button_press");
             _playerButton.ButtonPress();
             PlayerCharacterManager.Instance.TriggerPlayerPressButtonAnimation(_playerIndex);
 

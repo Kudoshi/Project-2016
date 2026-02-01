@@ -127,6 +127,7 @@ public class MaskController : Singleton<MaskController>
             CameraController.Instance.TriggerSuccessCamera();
             PlayerCharacterManager.Instance.TriggerPlayerSuccessAnimation();
             EffectsCanvas.Instance.TriggerSuccess();
+            SoundManager.Instance.PlaySound("sfx_correct_mask");
             // We do things that are true here
         }
         else
@@ -134,6 +135,7 @@ public class MaskController : Singleton<MaskController>
             GameManager.Instance.UpdateMaskFail();
             CameraController.Instance.TriggerFailCamera();
             EffectsCanvas.Instance.TriggerFailure();
+            SoundManager.Instance.PlaySound("sfx_wrong_mask");
         }
 
         SpawnMask();

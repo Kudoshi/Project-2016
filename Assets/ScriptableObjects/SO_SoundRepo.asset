@@ -19,5 +19,131 @@ MonoBehaviour:
     Volume: 1
     SpatialBlend: 0
     Pitch: 1
+  - SoundName: sfx_test2
+    Clip: {fileID: 8300000, guid: d8420ca6073396b4ba04bc24f0a5b47a, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_wrong_mask
+    Clip: {fileID: 8300000, guid: fe50a6f8ad855c94797f22bfe6030bbe, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_correct_mask
+    Clip: {fileID: 8300000, guid: 3a720569faccb7143987e937d0df32ff, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_discard
+    Clip: {fileID: 8300000, guid: 78e61c13b1a8533488c18d29e090cdc0, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_addon_0
+    Clip: {fileID: 8300000, guid: e74b48be361d9614a87020e594de1ed8, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_addon_1
+    Clip: {fileID: 8300000, guid: e59a39ef72678774daff033b96e52bc0, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_addon_2
+    Clip: {fileID: 8300000, guid: c54270387af0e0e4ea485c4efd79708c, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_addon_3
+    Clip: {fileID: 8300000, guid: 369f82f527e1e7845906e5b24e9f5494, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_conveyor_start
+    Clip: {fileID: 8300000, guid: 044facb2e1d6bcb45af8812eb8f46962, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_conveyor_stop
+    Clip: {fileID: 8300000, guid: 6b86c0973ac7518418c6280d6c9cb450, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_button_press
+    Clip: {fileID: 8300000, guid: 9ba61844875f36d4bbf0c533149640a5, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_popout
+    Clip: {fileID: 8300000, guid: 5e83dc6da1fee7c40a5cf76bd484d3f8, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_popin
+    Clip: {fileID: 8300000, guid: 5e83dc6da1fee7c40a5cf76bd484d3f8, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_jump
+    Clip: {fileID: 8300000, guid: 9de200a060b50b747a9f243d637ae1d8, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 0.1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_timer_warning
+    Clip: {fileID: 8300000, guid: 01babcdae2bd0324a905c8bee8ab33e8, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 0.4
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_gamend_timer
+    Clip: {fileID: 8300000, guid: 99f38966f9fcf3a4588b3e36f572e504, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_endgame
+    Clip: {fileID: 8300000, guid: 53c1183069cd47b4e8ec60db76a0e784, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_three
+    Clip: {fileID: 8300000, guid: 9b78b90a2c474e241b40a353b4f5eb37, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_two
+    Clip: {fileID: 8300000, guid: 200e5096a02d712499dd33999feae9d5, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_one
+    Clip: {fileID: 8300000, guid: 593bc65308ed156498592a90753b4a4e, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
+  - SoundName: sfx_zero
+    Clip: {fileID: 8300000, guid: 00c89b853581fdb44a14832a7e3513f8, type: 3}
+    AttachedParent: {fileID: 0}
+    Volume: 1
+    SpatialBlend: 0
+    Pitch: 1
   BGMList: []
   DialoguePath: Dialogues/Voicelines

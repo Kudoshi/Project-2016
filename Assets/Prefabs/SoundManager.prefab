@@ -49,7 +49,7 @@ MonoBehaviour:
   m_SoundEmitterPool:
     Count: 200
     m_Prefab: {fileID: 6584797431430463196}
-    m_DefaultActive: 0
+    m_DefaultActive: 1
   m_TestSoundName: sfx_test
   m_BGMAudioSource: {fileID: 0}
   m_DialogueAudioSource: {fileID: 0}

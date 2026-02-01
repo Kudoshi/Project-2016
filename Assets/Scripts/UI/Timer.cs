@@ -16,6 +16,10 @@ namespace UI
         [SerializeField] private Color timerEmptyColor = Color.red;
         [SerializeField] private bool trackElapsedTime;
 
+
+        [SerializeField] private bool timerTotalTime = false;
+        private bool sfxEndGamePlayed = false;
+
         public event Action OnTimerExpired;
 
         private float _timeRemaining;
@@ -70,6 +74,12 @@ namespace UI
                 _timeRemaining = 0f;
                 _isActive = false;
                 OnTimerExpired?.Invoke();
+            }
+
+            if (timerTotalTime && !sfxEndGamePlayed && _timeRemaining <= 15)
+            {
+                sfxEndGamePlayed = true;
+                SoundManager.Instance.PlaySound("sfx_timer_warning");
             }
             
             if (timerText != null)

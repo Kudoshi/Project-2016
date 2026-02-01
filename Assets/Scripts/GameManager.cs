@@ -54,6 +54,8 @@ public class GameManager : Singleton<GameManager>
         UpdateScoreUI();
 
         ChangeGameState(GameState.INSTRUCTION);
+
+        SoundManager.Instance.PlaySound("sfx_test2");
     }
 
     public void OnMaskArrived()

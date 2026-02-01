@@ -43,6 +43,8 @@ public class InstructionController : Singleton<InstructionController>
 
         Vector3 originalScale = _container.transform.localScale;
 
+        SoundManager.Instance.PlaySound("sfx_popin");
+
         _container.transform.localScale = Vector3.zero;
         _container.transform.DOScale(originalScale, _popinDuration).SetEase(Ease.OutElastic);
         _container.gameObject.SetActive(true);
@@ -52,6 +54,7 @@ public class InstructionController : Singleton<InstructionController>
     {
         _isActive = false;
 
+        SoundManager.Instance.PlaySound("sfx_popout");
         _container.transform.DOScale(Vector3.zero, _popoutDuration)
             .SetEase(Ease.InBack)
         .OnComplete(() =>

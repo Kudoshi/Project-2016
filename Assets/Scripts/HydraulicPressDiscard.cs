@@ -25,6 +25,8 @@ public class HydraulicPressDiscard : Singleton<HydraulicPressDiscard>
 
         _active = false;
 
+        SoundManager.Instance.PlaySound("sfx_discard");
+
         _hammer.DOMove(_hammerDownPosition.position, _hammerHitTime)
        .SetEase(Ease.OutBack)
        .OnComplete(() => {

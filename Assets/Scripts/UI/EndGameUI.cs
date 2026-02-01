@@ -36,6 +36,10 @@ namespace UI
             if (finalScoreText != null)
                 finalScoreText.text = score.ToString();
 
+            SoundManager.Instance.PlaySound("sfx_popin");
+            //SoundManager.Instance.PlaySound("sfx_gamend_timer");
+            SoundManager.Instance.PlaySound("sfx_endgame");
+
             if (totalTimeText != null)
             {
                 int minutes = Mathf.FloorToInt(totalTime / 60f);

@@ -34,9 +34,26 @@ public class CountdownController : MonoBehaviour
     {
         _container.SetActive(true);
 
+        SoundManager.Instance.PlaySound("sfx_three");
+
+        Util.WaitForSeconds(this, () =>
+        {
+            SoundManager.Instance.PlaySound("sfx_two");
+
+        }, .95f);
+
+        Util.WaitForSeconds(this, () =>
+        {
+            SoundManager.Instance.PlaySound("sfx_one");
+
+        }, 1.95f);
+
+
+
         Util.WaitForSeconds(this, ()=>
         {
             _container.SetActive(false);
+            SoundManager.Instance.PlaySound("sfx_zero");
             GameManager.Instance.ChangeGameState(GameState.GAME);
         }, 2.95f);
 

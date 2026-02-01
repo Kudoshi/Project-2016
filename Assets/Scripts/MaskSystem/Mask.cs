@@ -78,6 +78,8 @@ public class Mask : MonoBehaviour
 
     private void AnimationApplyMaskAddon(int rendererIndex, SpriteRenderer renderer)
     {
+        SoundManager.Instance.PlaySound(new SoundVariationizer("sfx_addon_", 0, 4));
+
         Vector3 oriScale = renderer.transform.localScale;
         renderer.transform.localScale = Vector3.zero;
         renderer.transform.DOScale(oriScale, _popInAddonDuration)
