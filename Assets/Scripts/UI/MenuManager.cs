@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -28,7 +27,10 @@ namespace UI
 
         public void OnStartButton()
         {
-            ShowPanel(modeSelectionPanel);
+            if (!string.IsNullOrEmpty(gameSceneName))
+                SceneLoader.LoadScene(gameSceneName);
+            else
+                Debug.LogWarning("[MenuManager] Game scene name is not set.");
         }
 
         public void OnCreditsButton()
@@ -54,7 +56,7 @@ namespace UI
         {
             GameModeSelection.Current = (GameMode)mode;
             if (!string.IsNullOrEmpty(gameSceneName))
-                SceneManager.LoadScene(gameSceneName);
+                SceneLoader.LoadScene(gameSceneName);
             else
                 Debug.LogWarning("[MenuManager] Game scene name is not set.");
         }

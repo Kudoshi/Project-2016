@@ -1,25 +1,42 @@
+using System;
+using System.Collections;
+using Kudoshi.Utilities;
 using TMPro;
 using UI;
 using UnityEngine;
-using Kudoshi.Utilities;
-using System;
 
 public class GameManager : Singleton<GameManager>
 {
-    public static event Action<GameState> OnChangeGameState;
-
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private Timer gameTimer;
     [SerializeField] private Timer maskTimer;
 
-    [SerializeField] private float bonusTimeMax = 5f;
+    [Header("Countdown")] [SerializeField] private GameObject countdownPanel;
+
+    [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private float countdownDuration = 3f;
+
+    [Header("End Game")] [SerializeField] private EndGameUI endGameUI;
+
+    [Header("Bonus Time")] [SerializeField]
+    private float bonusTimeMax = 5f;
+
     [SerializeField] private float bonusTimeMin = 0.5f;
     [SerializeField] private float decayRate = 0.15f;
-    private GameState _gameState;
+    private bool _isGameActive;
 
     private int _score;
-    private bool _isGameActive;
-    public GameState GameState { get => _gameState;}
+    public GameState GameState { get; private set; }
+
+    private void Start()
+    {
+        _score = 0;
+        _isGameActive = false;
+        UpdateScoreUI();
+
+        ChangeGameState(GameState.COUNTDOWN);
+        StartCoroutine(CountdownRoutine());
+    }
 
     private void OnEnable()
     {
@@ -50,6 +67,7 @@ public class GameManager : Singleton<GameManager>
     {
         maskTimer.StartTimer();
     }
+
     public void UpdateMaskSuccess()
     {
         _score++;
@@ -58,11 +76,10 @@ public class GameManager : Singleton<GameManager>
 
         // Trigger whatever animations or stuff u need to do
         // Do the increase in timer
-        float bonus = bonusTimeMax * Mathf.Exp(-decayRate * _score);
-        
+        var bonus = bonusTimeMin + (bonusTimeMax - bonusTimeMin) * Mathf.Exp(-decayRate * _score);
+
         gameTimer.AddTime(bonus);
         maskTimer.StopTimer();
-
     }
 
     public void UpdateMaskFail()
@@ -72,18 +89,25 @@ public class GameManager : Singleton<GameManager>
         // trigger animations or smth
     }
 
-
-  
-
     public void ChangeGameState(GameState gameState)
     {
-        _gameState = gameState;
-        OnChangeGameState?.Invoke(_gameState);
+        GameState = gameState;
+        OnChangeGameState?.Invoke(GameState);
     }
 
     private void OnGameTimerExpired()
     {
         _isGameActive = false;
+        maskTimer.StopTimer();
+        ShowEndGame();
+    }
+
+    private void ShowEndGame()
+    {
+        ChangeGameState(GameState.ENDGAME);
+
+        if (endGameUI != null)
+            endGameUI.Show(_score);
     }
 
     private void OnGameStateChanged(GameState state)
@@ -97,7 +121,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (!_isGameActive) return;
 
-        if (_gameState != GameState.GAME) return;
+        if (GameState != GameState.GAME) return;
 
         HydraulicPressDiscard.Instance.Discard();
     }
