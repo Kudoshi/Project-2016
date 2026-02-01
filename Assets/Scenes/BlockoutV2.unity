@@ -714,7 +714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 415699691048835257, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_SortingOrder
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 454897814438691698, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_IsActive
@@ -774,7 +774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 965971389064271622, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: totalTime
-      value: 3
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 978809201035628870, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_Sprite
@@ -952,6 +952,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2522690608992815146, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
+      propertyPath: popinTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3270358352124276459, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: timerFullColor.b
       value: 1
@@ -1086,20 +1090,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6781154968681919260, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_fontSize
-      value: 32
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 6781154968681919260, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 42ae94be1a0224a419e2894938fe9e4b, type: 2}
+      objectReference: {fileID: 11400000, guid: d6ef79195586e3e4786d8c85408fa022, type: 2}
     - target: {fileID: 6781154968681919260, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_fontSizeBase
-      value: 32
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 6781154968681919260, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1665122701803260461, guid: 42ae94be1a0224a419e2894938fe9e4b, type: 2}
+      objectReference: {fileID: -1720156646255812360, guid: d6ef79195586e3e4786d8c85408fa022, type: 2}
     - target: {fileID: 6781154968681919260, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -1198,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7841118910740379404, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -406
+      value: -410
       objectReference: {fileID: 0}
     - target: {fileID: 7858891041211275104, guid: 3a918d0b9956ae84ab92ea042763c43e, type: 3}
       propertyPath: endGameUI
@@ -4693,9 +4697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee02b7644f386464297d5540a256817b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuButtonHover
-  hoverColour: {r: 1, g: 0, b: 0, a: 1}
-  normalColour: {r: 0, g: 0, b: 0, a: 0}
-  exitTransitionSpeed: 2
+  hoverColour: {r: 0.78823537, g: 0.78823537, b: 0.78823537, a: 1}
+  normalColour: {r: 1, g: 1, b: 1, a: 1}
+  exitTransitionSpeed: 0.5
 --- !u!114 &1681107383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5539,8 +5543,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 23
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 42ae94be1a0224a419e2894938fe9e4b, type: 2}
-  m_sharedMaterial: {fileID: -1665122701803260461, guid: 42ae94be1a0224a419e2894938fe9e4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d6ef79195586e3e4786d8c85408fa022, type: 2}
+  m_sharedMaterial: {fileID: -1720156646255812360, guid: d6ef79195586e3e4786d8c85408fa022, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6006,8 +6010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee02b7644f386464297d5540a256817b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuButtonHover
-  hoverColour: {r: 1, g: 0, b: 0, a: 1}
-  normalColour: {r: 0, g: 0, b: 0, a: 0}
+  hoverColour: {r: 0.78823537, g: 0.78823537, b: 0.78823537, a: 1}
+  normalColour: {r: 1, g: 1, b: 1, a: 1}
   exitTransitionSpeed: 2
 --- !u!114 &2126388673
 MonoBehaviour:
