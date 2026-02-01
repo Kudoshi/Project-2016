@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9fd18f44ecfb2a94b835939ca0551b95
   - enabled: 1
-    path: Assets/Scenes/BlockoutV3.unity
-    guid: 5d26a1da23c12944780ffe431445bf23
+    path: Assets/Scenes/BlockoutV2.unity
+    guid: 880a0c5ed4192dc489a35edb6e437449
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
