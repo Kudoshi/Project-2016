@@ -112,6 +112,7 @@ public class MaskController : Singleton<MaskController>
     private void MaskArrived()
     {
         SetFactoryState(FactoryState.MASK_READY);
+        ConveyorBelt.Instance.StopConveyorBelt();
         GameManager.Instance.OnMaskArrived();
     }
 
@@ -137,6 +138,7 @@ public class MaskController : Singleton<MaskController>
     private void MaskDoneDeliver()
     {
         SetFactoryState(FactoryState.MASK_END);
+        ConveyorBelt.Instance.StartConveyorBelt();
 
         var mover = _currentMask.GetComponent<MaskMover>();
         mover.MoveTo(exitPoint.position, moveDuration, () =>
