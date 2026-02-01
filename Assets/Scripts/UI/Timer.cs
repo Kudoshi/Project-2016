@@ -14,21 +14,27 @@ namespace UI
         [SerializeField] private AnimationCurve sliderCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
         [SerializeField] private Color timerFullColor = Color.green;
         [SerializeField] private Color timerEmptyColor = Color.red;
+        [SerializeField] private bool trackElapsedTime;
 
         public event Action OnTimerExpired;
 
         private float _timeRemaining;
+        private float _elapsedTime;
         private bool _isActive;
+
+        public float ElapsedTime => _elapsedTime;
 
         public void StartTimer()
         {
             _timeRemaining = totalTime;
+            if (trackElapsedTime) _elapsedTime = 0f;
             _isActive = true;
         }
-    
+
         public void StartTimer(float duration)
         {
             _timeRemaining = duration;
+            if (trackElapsedTime) _elapsedTime = 0f;
             _isActive = true;
         }
         
@@ -47,6 +53,7 @@ namespace UI
             if (!_isActive) return;
         
             _timeRemaining -= Time.deltaTime;
+            if (trackElapsedTime) _elapsedTime += Time.deltaTime;
 
             if (_timeRemaining <= 0)
             {
