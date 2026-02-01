@@ -1826,36 +1826,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1044619380}
   - component: {fileID: 1044619379}
-  - component: {fileID: 1044619378}
   m_Layer: 0
-  m_Name: BG
+  m_Name: ConveyrBeltBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1044619378
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044619377}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c4e556653cd934644a79443ff11dd2ae, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1044619379
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1923,11 +1900,11 @@ Transform:
   m_GameObject: {fileID: 1044619377}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.742, z: 0}
-  m_LocalScale: {x: 184.39894, y: 37.486416, z: 20.61959}
+  m_LocalPosition: {x: 0, y: 0.3702731, z: -0.74}
+  m_LocalScale: {x: 86.120125, y: 17.50734, z: 9.63}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1641433440}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085254858
 GameObject:
@@ -2647,7 +2624,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 763.704, y: 763.704}
+  m_SizeDelta: {x: 306.697, y: 306.697}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271872938
 MonoBehaviour:
@@ -2662,14 +2639,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.027018547, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 4b5496848f16baf46b6b4501e35ca71e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3203,8 +3180,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 3.519, z: -0.74}
   m_LocalScale: {x: 0.46703157, y: 0.46703157, z: 0.46703157}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1044619380}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1641433441
@@ -3255,7 +3231,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 763.704, y: 763.704}
+  m_SizeDelta: {x: 306.374, y: 306.374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1708933682
 MonoBehaviour:
@@ -3270,14 +3246,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.35423064, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 783aceef61d5fd94dbdb44ead91a3ebf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4192,4 +4168,5 @@ SceneRoots:
   - {fileID: 1358365677}
   - {fileID: 189337318}
   - {fileID: 1641433440}
+  - {fileID: 1044619380}
   - {fileID: 802816573}

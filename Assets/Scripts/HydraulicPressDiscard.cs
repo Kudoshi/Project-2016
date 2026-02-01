@@ -48,6 +48,7 @@ public class HydraulicPressDiscard : Singleton<HydraulicPressDiscard>
     {
         // Play PFX;
         MaskController.Instance.SpawnMask();
+        ConveyorBelt.Instance.StartConveyorBelt();
 
         _active = true;
     }

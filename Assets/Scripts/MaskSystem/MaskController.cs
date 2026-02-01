@@ -124,12 +124,14 @@ public class MaskController : Singleton<MaskController>
             GameManager.Instance.UpdateMaskSuccess();
             CameraController.Instance.TriggerSuccessCamera();
             PlayerCharacterManager.Instance.TriggerPlayerSuccessAnimation();
+            EffectsCanvas.Instance.TriggerSuccess();
             // We do things that are true here
         }
         else
         {
             GameManager.Instance.UpdateMaskFail();
             CameraController.Instance.TriggerFailCamera();
+            EffectsCanvas.Instance.TriggerFailure();
         }
 
         SpawnMask();

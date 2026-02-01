@@ -34,7 +34,8 @@ public class EffectsCanvas : Singleton<EffectsCanvas>
 
         Vector3 oriSize = indicatorObj.transform.localScale;
         indicatorObj.transform.localScale = Vector3.zero;
-        indicatorObj.transform.DOScale(oriSize, _indicatorPopinTime);
+        indicatorObj.transform.DOScale(oriSize, _indicatorPopinTime)
+            .SetEase(Ease.OutElastic);
 
         Util.WaitForSeconds(this, () =>
         {
