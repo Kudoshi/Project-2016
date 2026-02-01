@@ -20,6 +20,7 @@ public class MaskController : Singleton<MaskController>
     [SerializeField] private Transform exitPoint;
     [SerializeField] private float moveDuration = 1f;
 
+
     private FactoryState _factoryState = FactoryState.IDLE;
 
     //private 
@@ -120,11 +121,14 @@ public class MaskController : Singleton<MaskController>
         if (_currentMask.CheckMaskCorrect())
         {
             GameManager.Instance.UpdateMaskSuccess();
+            CameraController.Instance.TriggerSuccessCamera();
+            PlayerCharacterManager.Instance.TriggerPlayerSuccessAnimation();
             // We do things that are true here
         }
         else
         {
             GameManager.Instance.UpdateMaskFail();
+            CameraController.Instance.TriggerFailCamera();
         }
 
         SpawnMask();

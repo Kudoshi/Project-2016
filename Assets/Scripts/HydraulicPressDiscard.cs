@@ -10,6 +10,7 @@ public class HydraulicPressDiscard : Singleton<HydraulicPressDiscard>
     [SerializeField] private float _hammerHitTime;
     [SerializeField] private float _hammerRetractTime;
 
+
     private Vector3 _originalHammerPosition;
     private bool _active = true;
 
@@ -20,6 +21,8 @@ public class HydraulicPressDiscard : Singleton<HydraulicPressDiscard>
 
     public void Discard()
     {
+        if (MaskController.Instance.FactoryState != FactoryState.MASK_READY) return;
+
         _active = false;
 
         _hammer.DOMove(_hammerDownPosition.position, _hammerHitTime)
@@ -38,6 +41,7 @@ public class HydraulicPressDiscard : Singleton<HydraulicPressDiscard>
     private void HammerBam()
     {
         MaskController.Instance.MaskDiscard();
+        CameraController.Instance.TriggerDiscardCamera();
     }
 
     private void HammerDone()
