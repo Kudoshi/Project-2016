@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -6,13 +7,29 @@ namespace UI
 {
     public class EndGameUI : MonoBehaviour
     {
+        [SerializeField] private GameObject container;
         [SerializeField] private TMP_Text finalScoreText;
         [SerializeField] private TMP_Text totalTimeText;
         [SerializeField] private TMP_Text highScoreText;
         [SerializeField] private GameObject newBestLabel;
         [SerializeField] private string mainMenuSceneName = "MainMenu";
 
+        [Header("Animation")]
+        [SerializeField] private float fromTopHeight = 5;
+        [SerializeField] private float slideDownDuration;
+
         private const string BestScoreKey = "BestScore";
+
+        private void Awake()
+        {
+            container.SetActive(false);
+        }
+
+        [ContextMenu("EndGame")]
+        public void Context_Show()
+        {
+            Show(5, 72);
+        }
 
         public void Show(int score, float totalTime)
         {
@@ -42,7 +59,13 @@ namespace UI
             if (newBestLabel != null)
                 newBestLabel.SetActive(isNewBest);
 
-            gameObject.SetActive(true);
+            container.SetActive(true);
+
+            Vector3 oriPosition = container.transform.position;
+            container.transform.position = new Vector3(oriPosition.x, oriPosition.y + fromTopHeight, oriPosition.z);
+
+            container.transform.DOMoveY(oriPosition.y, slideDownDuration).SetEase(Ease.OutCubic);
+
         }
 
         public void OnRetry()
