@@ -1152,6 +1152,9 @@ MonoBehaviour:
   _randomizeJumpHeight: {x: 0.5, y: 0.8}
   _randomizeJumpInDuration: {x: 0.15, y: 0.25}
   _randomizeJumpOutDuration: {x: 0.25, y: 0.4}
+  _buttonPressHeight: -0.3
+  _buttonPressInDuration: 0.25
+  _buttonPressOutDuration: 1
 --- !u!1 &820537974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1163857044
 Transform:
   m_ObjectHideFlags: 0

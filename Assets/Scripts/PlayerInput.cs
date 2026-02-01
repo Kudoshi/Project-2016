@@ -17,6 +17,8 @@ public class PlayerInput : MonoBehaviour
         {
             bool canApply = MaskController.Instance.InputApplyAddon(_maskAddon);
             _playerButton.ButtonPress();
+            PlayerCharacterManager.Instance.TriggerPlayerPressButtonAnimation(_playerIndex);
+
             if (canApply)
             {
                 _canInput = false;
