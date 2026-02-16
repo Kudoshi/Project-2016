@@ -58,6 +58,8 @@ MonoBehaviour:
   bonusTimeMax: 5
   bonusTimeMin: 0.5
   decayRate: 0.05
+  timerCurve: {x: 5, y: 1}
+  difficultyAddition: 0.08
 --- !u!1 &454897814438691698
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +360,7 @@ MonoBehaviour:
   timerFullColor: {r: 0, g: 1, b: 0, a: 1}
   timerEmptyColor: {r: 1, g: 0, b: 0, a: 1}
   trackElapsedTime: 1
+  timerTotalTime: 0
 --- !u!1 &1267059878552386202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,11 +1104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6180c5df72601944fa73bd515de7ff82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.EndGameUI
+  container: {fileID: 0}
   finalScoreText: {fileID: 2098416876108368361}
   totalTimeText: {fileID: 6811925623800246545}
   highScoreText: {fileID: 2305925309140174175}
   newBestLabel: {fileID: 5730608054826538722}
   mainMenuSceneName: MainMenu
+  fromTopHeight: 5
+  slideDownDuration: 0
 --- !u!1 &4730151589332276590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1170,7 @@ MonoBehaviour:
   eyesAddonImage: {fileID: 5858475210579602}
   mouthAddonImage: {fileID: 950050206308272357}
   accessoryAddonImage: {fileID: 4059875868578633716}
+  popinTime: 0
 --- !u!1 &4809028367919544909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1246,7 @@ MonoBehaviour:
   timerFullColor: {r: 0, g: 1, b: 0, a: 1}
   timerEmptyColor: {r: 1, g: 0, b: 0, a: 1}
   trackElapsedTime: 0
+  timerTotalTime: 0
 --- !u!1 &5125328480854089726
 GameObject:
   m_ObjectHideFlags: 0

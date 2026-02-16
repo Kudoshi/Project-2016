@@ -25,7 +25,12 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private float bonusTimeMin = 0.5f;
     [SerializeField] private float decayRate = 0.15f;
+
+    [Header("Mask Timer")]
+    [SerializeField] private Vector2 timerCurve;
+    [SerializeField] private float difficultyAddition; // Hw much to add per mask completed
     private bool _isGameActive;
+    private float difficultyTimer = 0f;
 
     private int _score;
     public GameState GameState { get; private set; }
@@ -60,7 +65,9 @@ public class GameManager : Singleton<GameManager>
 
     public void OnMaskArrived()
     {
-        maskTimer.StartTimer();
+        float newTime = Mathf.Lerp(timerCurve.x, timerCurve.y, difficultyTimer);
+        maskTimer.StartTimer(newTime);
+        Debug.Log("[GameManager] New mask timer: " + newTime);
     }
 
     public void UpdateMaskSuccess()
@@ -73,6 +80,7 @@ public class GameManager : Singleton<GameManager>
         // Do the increase in timer
         var bonus = bonusTimeMin + (bonusTimeMax - bonusTimeMin) * Mathf.Exp(-decayRate * _score);
 
+        difficultyTimer += difficultyAddition;
         gameTimer.AddTime(bonus);
         maskTimer.StopTimer();
     }
